@@ -5,10 +5,10 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                    AppTaxi is an AdHoc AppDistribution Plattform with integrated Crash Reporting.
                    DESC
-  s.homepage     = "http://app-taxi.com"
+  s.homepage     = "https://github.com/kfinteractive/KFAppTaxi.git"
   s.license      = 'MIT'
   s.authors       = { "Gunnar Herzog" => "gunnar.herzog@kf-interactive.com", "Rico Becker" => "rico.becker@kf-interactive.com" }
-  s.source       = { :git => "http://EXAMPLE/NAME.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/kfinteractive/KFAppTaxi.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '6.0'
   s.ios.deployment_target = '6.0'
