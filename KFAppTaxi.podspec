@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #s.osx.deployment_target = '10.8'
   s.requires_arc = true
 
-  s.ios.source_files = 'Classes/ios/**/*.h,m'
-  s.ios.resource_bundle = { 'KFAppTaxi' => 'Assets/ios/KFAppTaxi.bundle/*' }
+  s.ios.source_files = 'Classes/ios/**/*'
+  s.ios.resource = 'Assets/ios/KFAppTaxi.bundle'
   s.ios.framework = 'SystemConfiguration'
 
   s.ios.exclude_files = 'Classes/osx'
