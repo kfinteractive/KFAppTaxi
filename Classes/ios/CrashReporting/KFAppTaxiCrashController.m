@@ -26,7 +26,7 @@ NSString * const KFAppTaxiCrashReportsDictionaryKey = @"KFAppTaxiCrashReportsDic
 NSString * const KFAppTaxiSubmitCrashReportsAutomaticallyKey = @"KFAppTaxiSubmitCrashReportsAutomatically";
 
 
-NSString * KFAppTaxiLocalizedString(NSString *key, NSString *comment)
+NSBundle *KFAppTaxiBundle()
 {
     static NSBundle *appTaxiBundle = nil;
 
@@ -37,7 +37,13 @@ NSString * KFAppTaxiLocalizedString(NSString *key, NSString *comment)
         appTaxiBundle = [NSBundle bundleWithPath:path];
     });
 
-    return NSLocalizedStringFromTableInBundle(key, @"KFAppTaxi", appTaxiBundle, comment);
+    return appTaxiBundle;
+}
+
+
+NSString * KFAppTaxiLocalizedString(NSString *key, NSString *comment)
+{
+    return NSLocalizedStringFromTableInBundle(key, @"KFAppTaxi", KFAppTaxiBundle(), comment);
 }
 
 
@@ -62,6 +68,7 @@ NSString * KFAppTaxiLocalizedString(NSString *key, NSString *comment)
     dispatch_once(&pred, ^
     {
         sharedInstance = [[KFAppTaxiCrashController alloc] init];
+        KFAppTaxiBundle();
     });
     
     return sharedInstance;
